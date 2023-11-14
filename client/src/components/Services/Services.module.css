@@ -58,6 +58,10 @@
 .services-costs {
     padding-bottom: 2em;
 }
+
+.services-costs span{
+    font-weight: bold;
+}
 .services-costs h2 {
     text-align: center;
 }
