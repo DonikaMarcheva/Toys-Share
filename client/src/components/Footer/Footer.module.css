@@ -1,0 +1,11 @@
+.site-footer {
+    background-color: rgb(232, 222, 222);
+}
+
+.site-footer p {
+    font-size: 1.2em;
+    padding: 1em 2em;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}

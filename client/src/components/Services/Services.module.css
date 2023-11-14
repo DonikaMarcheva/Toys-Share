@@ -1,0 +1,67 @@
+.services {
+    background-color: rgb(254, 250, 250);
+     flex: 1 1 auto;
+}
+
+.services .container {
+    max-width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.services .container>h2 {
+    padding-top: 1em
+}
+
+.services-cases {
+    display: flex;
+    gap: 3em;
+    width: 60%;
+}
+
+.services-cases h4 {
+    font-size: 18px;
+    padding-bottom: 1em;
+}
+
+.services-cases article {
+    flex: 1 1 45%;
+    gap:5em;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(170, 167, 167);
+    box-shadow: 0 0 1.5em 0.1em rgba(0,0,0,0.4);
+}
+
+.services-cases p {
+    padding: 0.5em;
+}
+
+.services-cases article p:first-of-type {
+    font-size: 2em;
+}
+.services-cases article h4 {
+    padding: 0 1em;
+}
+
+.services-costs {
+    padding-bottom: 2em;
+}
+.services-costs p {
+    text-indent: 2em;
+}
+.services-costs {
+    padding-bottom: 2em;
+}
+.services-costs h2 {
+    text-align: center;
+}
+
+.service-cost span{
+    font-weight: bold;
+}

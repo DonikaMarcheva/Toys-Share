@@ -1,0 +1,44 @@
+.site-hero {
+    height: 100%;
+    background-color: #847167;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+}
+
+.site-hero-about {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.hero-content h2 {
+    font-size: 1.7em;
+    padding: 0.5em 0;
+    font-style: Helvetica;
+    font-style: italic;
+    color: rgb(232, 222, 222);
+}
+
+.help h2 {
+    font-size: 1.7em;
+}
+
+.site-hero-about .help{
+    flex-basis: 20%;
+}
+
+.image-container {
+    flex: 1 1 55%;
+    overflow: hidden;
+    border-radius: 0.3em;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
