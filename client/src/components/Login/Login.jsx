@@ -14,7 +14,7 @@ export default function Login() {
                         <input type="password" className={styles.text} name="password" />
                         <span>password</span><br />
                         <button className={styles.signin}>Sign In</button>
-                        <Link to={'/register'}>You dont have an account?</Link>
+                        <Link to={'/register'}>You don't have an account?</Link>
                     </form>
                 </div>
             </div>

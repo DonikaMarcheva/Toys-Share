@@ -16,7 +16,7 @@ export default function Register() {
                         <input type="password" className={styles.text} name="repeat-password" />
                         <span>repeat password</span><br />
                         <button className={styles.signin}>Register</button>
-                        <Link to={'/register'}>You already have an account?</Link>
+                        <Link to={'/login'}>You already have an account?</Link>
                     </form>
                 </div>
             </div>

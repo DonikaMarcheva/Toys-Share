@@ -1,32 +1,74 @@
 import styles from './Catalog.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBoxOpen, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 export default function Catalog() {
     return (
-        // <h1>Catalog</h1>
-        <div className={styles.services}>
+        <div className={styles.catalog}>
             <div className={styles.container}>
-                aaaaaaaa
-                <div className={styles["services-cases"]}>
-                    <article>
-                        <p>
-                            <FontAwesomeIcon icon={faBoxOpen} style={{ color: "#514d1f", }} />
-                        </p>
-                        <h4>You store a lot of unusefull toys</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum maiores adipisci consectetur molestiae repellendus illo, eum libero porro praesentium voluptates similique perferendis veritatis suscipit expedita modi ex accusantium amet. Aliquam!</p>
-                    </article>
-                    <article>
-                        <p>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#d69f6b", }} />
-                        </p>
-                        <h4>You are not sure your child will play with a specific toy.</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestias aliquid quos, voluptates itaque consequuntur esse voluptatum exercitationem autem similique obcaecati sunt libero, recusandae magni nulla laborum officiis non. Officia.</p>
-                    </article>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                            <img src="../../../public/images/login-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className={styles["card-title"]}>Exploring around</h2>
+                            <p className={styles["card-intro"]}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles["services-costs"]}>
-                    <h2>Costs</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloremque consequuntur voluptate, repellendus dolorum amet labore maxime veritatis ullam rem consequatur quisquam quis quos ipsam, nobis sequi? Quo, alias amet.</p>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                        <img src="../../../public/images/register-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className="card-title">A new trail you can't miss</h2>
+                            <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                        <img src="../../../public/images/login-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className="card-title">Inside the Outdoors</h2>
+                            <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                        <img src="../../../public/images/register-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className="card-title">Essential hiking hacks</h2>
+                            <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                        <img src="../../../public/images/login-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className="card-title">Discovering this hidden gem</h2>
+                            <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.cards}>
+                    <div className={styles["card-item"]}>
+                        <div className={styles["card-image"]}>
+                        <img src="../../../public/images/register-bear.jpg" alt="" />
+                        </div>
+                        <div className={styles["card-info"]}>
+                            <h2 className="card-title">1 Day routes for this weekend</h2>
+                            <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
