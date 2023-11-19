@@ -43,7 +43,7 @@ h2 {
     font-weight: 100;
 }
 
-span {
+.login-form span {
     text-transform: uppercase;
     font-size: 12px;
     opacity: 0.8;
@@ -92,7 +92,7 @@ label {
 }
 
 .signin {
-  background-color: #1161ed;
+  background-color: #8A97DB;
   color: #FFF;
   width: 100%;
   padding: 10px 20px;
