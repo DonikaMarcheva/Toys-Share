@@ -80,8 +80,8 @@ input {
   font-size: 14px;
 }
 
-h2,
-span{
+.register h2,
+.register span{
   margin-left: 20px;
 }
 
