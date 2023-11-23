@@ -19,30 +19,32 @@ const buildOptions = (data) => {
 
     return options;
 };
-try {
-    const request = async (method, url, data) => {
+
+const request = async (method, url, data) => {
+    try {
         const response = await fetch(url, {
             ...buildOptions(data),
             method,
-        })
-    }
-    if (request.ok != true) {
-        if (request.status == 403) {
-            localStorage.removeItem('accessToken');
-        }
-        const error = await request.json();
-        throw new Error(error.message);
-    }
+        });
 
-    if (request.status === 204) {
-        return {};
-    } else {
-        return await request.json();
+        if (response.ok != true) {
+            if (response.status == 403) {
+                localStorage.removeItem('accessToken')
+            }
+            const error = await response.json();
+            throw new Error(error.message);
+        }
+
+        if (response.status === 204) {
+            return {};
+        }
+
+        return await response.json();
+    } catch (error) {
+        alert(error.message);
+        throw error;
     }
-} catch {
-    alert(error.message);
-    throw error;
-}
+};
 
 export const get = request.bind(null, 'GET');
 export const post = request.bind(null, 'POST');

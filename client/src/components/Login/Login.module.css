@@ -16,7 +16,7 @@
 .login-form {
   position: relative;
   height: 470px;
-  width: 405px;
+  width: 425px;
   margin: auto;
   padding: 60px 60px;
   background: url('../../../public/images/login-bear.jpg') no-repeat center center #505050;
@@ -46,7 +46,8 @@ h2 {
 .login-form span {
   text-transform: uppercase;
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 1;
+  font-weight: 300;
   display: inline-block;
   position: relative;
   top: -65px;
@@ -81,8 +82,7 @@ input {
   font-size: 14px;
 }
 
-.login h2,
-.login span {
+.login h2 {
   margin-left: 20px;
 }
 
