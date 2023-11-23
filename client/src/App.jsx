@@ -8,7 +8,8 @@ import Add from './components/Add/Add.jsx';
 import Catalog from './components/Catalog/Catalog.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
-import Services from './components/Services/Services.jsx';
+import Services from './components/SiteServices/Services.jsx';
+import Path from './path.js';
 
 function App() {
 
@@ -19,13 +20,13 @@ function App() {
       
       {/* <main> */}
       <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/services' element={<Services />}></Route>
-          <Route path='/catalog' element={<Catalog />}></Route>
-          <Route path='/add' element={<Add />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/register' element={<Register />}></Route>
+          <Route path={Path.Home} element={<Home />}></Route>
+          <Route path={Path.About} element={<About />}></Route>
+          <Route path={Path.Services} element={<Services />}></Route>
+          <Route path={Path.Catalog} element={<Catalog />}></Route>
+          <Route path={Path.Add} element={<Add />}></Route>
+          <Route path={Path.Login} element={<Login />}></Route>
+          <Route path={Path.Register} element={<Register />}></Route>
           {/* <Route path='/logout' element={<Home />}></Route> */}
           
           </Routes>
