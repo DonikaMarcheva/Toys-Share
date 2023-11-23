@@ -14,6 +14,7 @@ import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Services from './components/SiteServices/Services.jsx';
 import Path from './path.js';
+import Logout from "./components/Logout/logout.jsx";
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
   };
 
   const registerSubmitHandler =async (values) => {
-    const result = await authService.register(values.email, values.password);
+    const result = await authService.register(values.email, values.username, values.password);
 
     setAuth(result);
     localStorage.setItem('accessToken', result.accessToken);
@@ -72,7 +73,7 @@ function App() {
           <Route path={Path.Add} element={<Add />}></Route>
           <Route path={Path.Login} element={<Login />}></Route>
           <Route path={Path.Register} element={<Register />}></Route>
-          {/* <Route path='/logout' element={<Home />}></Route> */}
+          <Route path={Path.Logout} element={<Logout />}></Route>
           
           </Routes>
       {/* </main> */}

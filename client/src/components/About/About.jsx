@@ -1,3 +1,4 @@
+import Path from '../../path.js';
 import styles from './About.module.css'
 import { Link } from 'react-router-dom';
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome' 
@@ -17,7 +18,7 @@ export default function About() {
                 <p>Now we have a decission for you!</p>
                 <p>You can share your unusefull toys with other children and your kid can play with different toy each month for free.</p>
 
-                <Link className= {styles.button}to={"/services"}>How it works?</Link>
+                <Link className= {styles.button}to={Path.Services}>How it works?</Link>
             </div>
         </div>
     );

@@ -1,7 +1,13 @@
+import { useContext } from 'react';
 import styles from './Catalog.module.css'
 import {Link} from 'react-router-dom'
+import AuthContext from '../../contexts/authContext.js';
 
 export default function Catalog() {
+    const {
+        isAuthenticated,
+    } = useContext(AuthContext);
+
     return (
         <div className={styles.catalog}>
             <div className={styles.container}>
@@ -14,10 +20,13 @@ export default function Catalog() {
                             <h2 className={styles["card-title"]}>Exploring around</h2>
                             <p className={styles["card-intro"]}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
-                        <div className={styles.buttons}>
+                        {isAuthenticated && (
+                            <div className={styles.buttons}>
                             <a href="#">Book</a>
                             <Link to="/details">Details</Link>
                         </div>
+                        )}
+                        
                     </div>
                 </div>
                 <div className={styles.cards}>
@@ -29,10 +38,12 @@ export default function Catalog() {
                             <h2 className="card-title">A new trail you can't miss</h2>
                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                         </div>
-                        <div className={styles.buttons}>
+                        {isAuthenticated && (
+                            <div className={styles.buttons}>
                             <a href="#">Book</a>
-                            <a href="#">Details</a>
+                            <Link to="/details">Details</Link>
                         </div>
+                        )}
                     </div>
                 </div>
                 <div className={styles.cards}>

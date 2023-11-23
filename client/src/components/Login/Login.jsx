@@ -30,14 +30,16 @@ export default function Login() {
                         className={styles.text} 
                         name={loginFormKeys.Email}
                         onChange={onChange}
-                        value={values[loginFormKeys.Email]} />
+                        value={values[loginFormKeys.Email]} 
+                        />
                         <span>email</span><br /><br />
 
                         <input type="password" 
                         className={styles.text} 
                         name={loginFormKeys.Password}
                         onChange={onChange}
-                        value={values[loginFormKeys.Password]} />
+                        value={values[loginFormKeys.Password]} 
+                        />
                         <span>password</span><br />
 
                         <button type="submit" className={styles.signin}>Log In</button>

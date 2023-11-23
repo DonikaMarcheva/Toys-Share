@@ -1,8 +1,8 @@
 import * as request from '../lib/request.js'
 
-const baseUrl= 'http://localhost:3030/users'
+const baseUrl = 'http://localhost:3030/users'
 
-export const login =  (email, password) => {
+export const login = (email, password) => {
     const result = request.post(`${baseUrl}/login`, {
         email,
         password
@@ -10,9 +10,10 @@ export const login =  (email, password) => {
 
     return result;
 }
-export const register = (email, password) => {
-    const result =  request.post(`${baseUrl}/register`, {
+export const register = (email, username, password) => {
+    const result = request.post(`${baseUrl}/register`, {
         email,
+        username,
         password
     })
 
