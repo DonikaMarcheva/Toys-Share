@@ -1,5 +1,6 @@
 {
     "3564027f-adcd-4425-b2c0-1253d2386c0c": {
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
         "toy": "A doll",
         "category": "Girl's toys",
         "address": "Varna, 18 Evlogi Georgiev Str, ap.13",
@@ -8,6 +9,7 @@
         "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
     },
     "c64db398-91cd-487c-b900-86058c0422f8": {
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
         "toy": "Ambulance truck",
         "category": "Boy's toys",
         "address": "Sifia, 10 Oborishte Str., ap.5",
@@ -16,6 +18,7 @@
         "_id": "c64db398-91cd-487c-b900-86058c0422f8"
     },
     "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b": {
+        "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
         "toy": "A robot",
         "category": "Boy's toys",
         "address": "Troyan, 1 Vazrozdentsi Str",
@@ -24,6 +27,7 @@
         "_id": "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
     },
     "18bfdb21-333b-42bd-a32c-c114263f2569": {
+        "_ownerId":"60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         "toy": "A collection of five fairy tails books",
         "category": "Books",
         "address": "Plovdiv, 2 Alen mak Str. ap.98",
