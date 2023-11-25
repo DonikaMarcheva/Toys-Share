@@ -13,8 +13,6 @@ const registerFormKeys = {
     RepeatPassword: 'repeat-password'
 }
 
-
-
 export default function Add() {
 
     const { registerSubmitHandler } = useContext(AuthContext);
