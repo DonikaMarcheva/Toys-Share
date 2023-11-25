@@ -8,7 +8,7 @@ export default function ToyItem({
     _id,
     toy,
     imageUrl,
-    description
+    category
 }) {
 
     const {
@@ -23,7 +23,7 @@ export default function ToyItem({
                 </div>
                 <div className={styles["card-info"]}>
                     <h2 className={styles["card-title"]}>{toy}</h2>
-                    <p className={styles["card-intro"]}>{description}</p>
+                    <p className={styles["card-intro"]}>Category: {category}</p>
                 </div>
                 {isAuthenticated && (
                     <div className={styles.buttons}>
