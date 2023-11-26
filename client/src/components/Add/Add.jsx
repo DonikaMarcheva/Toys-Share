@@ -38,13 +38,17 @@ export default function Add() {
                             value={values[addFormKeys.Toy]}
                         />
                         <span>toy</span>
-
-                        <input type="text"
+ 
+                        <select
                             className={styles.text}
                             name={addFormKeys.Category}
                             onChange={onChange}
-                            value={values[addFormKeys.Category]}
-                        />
+                            value={values[addFormKeys.Category]}>
+                                <option value=""></option>
+                                <option value="Boy's toys">Boy's toys</option>
+                                <option value="Girls's toys">Girls's toys</option>
+                                <option value="Books">Books</option>
+                        </select>
                         <span>category</span>
 
                         <input type="text"

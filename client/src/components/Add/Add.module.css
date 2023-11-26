@@ -68,6 +68,21 @@
     font-weight: bolder;
 }
 
+
+.add .text {
+    width: 89%;
+    height: 2em;
+    padding: 0 20px;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.171);
+    overflow: hidden;
+    margin-top: 15px;
+    outline: 0;
+    background: rgba(0, 0, 0, 0);
+    font-weight: bolder;
+}
+
 .add .text:focus {
     outline: 0;
     border: 2px solid rgba(255, 255, 255, 0.5);
