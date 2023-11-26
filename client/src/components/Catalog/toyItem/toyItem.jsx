@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styles from '../Catalog.module.css'
 import { Link } from 'react-router-dom'
-import AuthContext from '../../../contexts/authContext.js';
+import AuthContext from '../../../contexts/authContext.jsx';
 
 
 export default function ToyItem({

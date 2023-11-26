@@ -1,27 +1,29 @@
-import { Link } from 'react-router-dom'
-import { useContext } from "react";
+import { useContext } from 'react'
+
+import DataContext from '../../contexts/dataContext.jsx';
 import useForm from "../../hooks/useForm.js";
-import AuthContext from "../../contexts/authContext.js";
+import styles from './Add.module.css';
 
-import styles from './Add.module.css'
-import Path from '../../path.js';
-
-const registerFormKeys = {
-    Email: 'email',
-    Username: 'username',
-    Password: 'password',
-    RepeatPassword: 'repeat-password'
+const addFormKeys = {
+    Toy: 'toy',
+    Category: 'category',
+    Image: 'imageUrl',
+    Address: 'address',
+    Description: 'description'
 }
 
 export default function Add() {
 
-    const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-        [registerFormKeys.Email]: '',
-        [registerFormKeys.Username]: '',
-        [registerFormKeys.Password]: '',
-        [registerFormKeys.RepeatPassword]: ''
-    })
+    const { uploadToyHandler } = useContext(DataContext);
+
+    const { values, onChange, onSubmit } = useForm(uploadToyHandler, {
+        [addFormKeys.Toy]: '',
+        [addFormKeys.Category]: '',
+        [addFormKeys.Image]: '',
+        [addFormKeys.Address]: '',
+        [addFormKeys.Description]: '',
+    });
+
 
     return (
         <div className={styles.add}>
@@ -31,33 +33,41 @@ export default function Add() {
                     <form onSubmit={onSubmit}>
                         <input type="text"
                             className={styles.text}
-                            name={registerFormKeys.Email}
+                            name={addFormKeys.Toy}
                             onChange={onChange}
-                            value={values[registerFormKeys.Email]}
+                            value={values[addFormKeys.Toy]}
                         />
                         <span>toy</span>
 
                         <input type="text"
                             className={styles.text}
-                            name={registerFormKeys.Username}
+                            name={addFormKeys.Category}
                             onChange={onChange}
-                            value={values[registerFormKeys.Username]}
+                            value={values[addFormKeys.Category]}
+                        />
+                        <span>category</span>
+
+                        <input type="text"
+                            className={styles.text}
+                            name={addFormKeys.Image}
+                            onChange={onChange}
+                            value={values[addFormKeys.Image]}
                         />
                         <span>image</span>
 
                         <input type="text"
                             className={styles.text}
-                            name={registerFormKeys.Password}
+                            name={addFormKeys.Address}
                             onChange={onChange}
-                            value={values[registerFormKeys.Password]}
+                            value={values[addFormKeys.Address]}
                         />
                         <span>owner address</span>
 
                         <textarea type="text"
                             className={styles.description}
-                            name={registerFormKeys.RepeatPassword}
+                            name={addFormKeys.Description}
                             onChange={onChange}
-                            value={values[registerFormKeys.RepeatPassword]}
+                            value={values[addFormKeys.Description]}
                         />
                         <span>add description</span>
 

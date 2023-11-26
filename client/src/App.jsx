@@ -1,8 +1,6 @@
-import { useState } from "react";
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import AuthContext from "./contexts/authContext.js"
-import * as authService from '../src/services/authService.js'
+import { AuthProvider } from "./contexts/authContext.jsx"
 
 import Footer from "./components/Footer/Footer.jsx"
 import Header from "./components/Header/Header.jsx"
@@ -14,52 +12,14 @@ import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Services from './components/SiteServices/Services.jsx';
 import Path from './path.js';
-import Logout from "./components/Logout/logout.jsx";
+import Logout from "./components/Logout/Logout.jsx";
+import { DataProvider } from './contexts/dataContext.jsx';
 
 function App() {
 
-  const navigate = useNavigate();
-
-  const [auth, setAuth] = useState(()=>{
-    localStorage.removeItem('accessToken');
-
-    return {}
-  });
-
-  const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
-
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-
-    navigate(Path.Home);
-  };
-
-  const registerSubmitHandler =async (values) => {
-    const result = await authService.register(values.email, values.username, values.password);
-
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-
-    navigate(Path.Home);
-  };
-
-  const logoutHandler =()=> {
-    setAuth({});
-    localStorage.removeItem('accessToken');
-
-  }
-  const values = {
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username:auth.username,
-    email:auth.email,
-    isAuthenticated: !!auth.accessToken
-  }
-
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
+       <DataProvider>
     <div className="content-container">
 
       <Header />
@@ -80,7 +40,8 @@ function App() {
       <Footer />
   
     </div>
-    </AuthContext.Provider>
+    </DataProvider>
+    </AuthProvider>
   )
 }
 

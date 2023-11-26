@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from './logo.png'
 import styles from './Header.module.css'
 import Path from '../../path.js';
-import AuthContext from '../../contexts/authContext.js';
+import AuthContext from '../../contexts/authContext.jsx';
 import { useContext } from 'react';
 
 export default function Header() {

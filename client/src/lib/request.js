@@ -8,14 +8,26 @@ const buildOptions = (data) => {
         };
     }
 
-    const token = localStorage.getItem('accessToken');
+    // const token = localStorage.getItem('accessToken');
 
-    if (token) {
-        options.headers = {
-            ...options.headers,
-            'X-Authorization': token
+    // if (token) {
+    //     options.headers = {
+    //         ...options.headers,
+    //         'X-Authorization': token
+    //     };
+    // }
+
+    const serializedAuth = localStorage.getItem('auth');
+    if (serializedAuth) {
+        const auth = JSON.parse(serializedAuth);
+
+        if (auth.accessToken) {
+            options.headers = {
+                ...options.headers,
+                'X-Authorization': auth.accessToken,
+            };
         };
-    }
+    };
 
     return options;
 };
@@ -29,7 +41,8 @@ const request = async (method, url, data) => {
 
         if (response.ok != true) {
             if (response.status == 403) {
-                localStorage.removeItem('accessToken')
+                // localStorage.removeItem('accessToken')
+                localStorage.removeItem('auth');
             }
             const error = await response.json();
             throw new Error(error.message);

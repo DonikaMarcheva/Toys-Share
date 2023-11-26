@@ -12,12 +12,18 @@ export default function useForm(submitHandler, initialValues) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        submitHandler(values)
-    }
+        submitHandler(values);
+        setValues(initialValues);
+    };
+
+    const changeValues = (newValues) => {
+        setValues(newValues);
+    };
 
     return {
         values,
         onChange,
-        onSubmit
+        onSubmit,
+        changeValues
     }
 }
