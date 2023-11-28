@@ -3,6 +3,7 @@ const Path ={
     About:"/about",
     Add:"/add",
     Catalog:"/catalog",
+    ToyDetails:`/catalog/:toyId`,
     Services:"/services",
     Login:"/login",
     Register:"/register",
