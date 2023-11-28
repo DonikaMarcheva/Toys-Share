@@ -16,7 +16,6 @@ export default function Catalog() {
         <div className={styles.catalog}>
             <div className={styles.container}>
                 
-
             {toys.map(toy => (
                 <ToyItem key={toy._id} {...toy} />
             ))}

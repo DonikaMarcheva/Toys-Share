@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.catalog {
+    flex:1 1 auto
+}
+
 /* //Flex container */
 .catalog .container {
     max-width: 90vw;
