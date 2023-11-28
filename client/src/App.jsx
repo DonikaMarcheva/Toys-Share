@@ -14,6 +14,9 @@ import Services from './components/SiteServices/Services.jsx';
 import Path from './path.js';
 import Logout from "./components/Logout/Logout.jsx";
 import { DataProvider } from './contexts/dataContext.jsx';
+import ToyDetails from './components/ToyDetails/toyDetails.jsx';
+
+
 
 function App() {
 
@@ -30,6 +33,7 @@ function App() {
           <Route path={Path.About} element={<About />}></Route>
           <Route path={Path.Services} element={<Services />}></Route>
           <Route path={Path.Catalog} element={<Catalog />}></Route>
+          <Route path={Path.ToyDetails} element= {<ToyDetails />}></Route>
           <Route path={Path.Add} element={<Add />}></Route>
           <Route path={Path.Login} element={<Login />}></Route>
           <Route path={Path.Register} element={<Register />}></Route>
