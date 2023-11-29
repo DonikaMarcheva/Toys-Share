@@ -7,7 +7,8 @@ const Path ={
     Services:"/services",
     Login:"/login",
     Register:"/register",
-    Logout:'/logout'
+    Logout:'/logout',
+    NotFound:'*'
 }
 
 export default Path;
