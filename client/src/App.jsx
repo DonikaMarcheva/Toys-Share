@@ -16,6 +16,7 @@ import Path from './path.js';
 import Logout from "./components/Logout/Logout.jsx";
 import ToyDetails from './components/ToyDetails/toyDetails.jsx';
 import PageNotFound from './components/PageNotFound/PageNotFound.jsx';
+import ToyEdit from './components/toyEdit/ToyEdit.jsx';
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path={Path.Catalog} element={<Catalog />}></Route>
           <Route path={Path.ToyDetails} element= {<ToyDetails />}></Route>
           <Route path={Path.Add} element={<Add />}></Route>
+          <Route path={Path.Edit} element={<ToyEdit />}></Route>
           <Route path={Path.Login} element={<Login />}></Route>
           <Route path={Path.Register} element={<Register />}></Route>
           <Route path={Path.Logout} element={<Logout />}></Route>
