@@ -10,11 +10,11 @@
     flex: 1 1 auto;
 }
 
-p{
+.page-fot-found p{
     font-size:30px;
     text-align:center;
   }
-  a{
+  .page-not-found a{
     color:#6D759E;
     text-decoration:none;
   }

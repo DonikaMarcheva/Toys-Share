@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import AuthContext from "../../contexts/authContext.jsx";
 
 import * as bookService from '../../services/bookedService.js';
-import styles from '../toyDetails/ToyDetails.module.css';
+import styles from '../ToyDetails/ToyDetails.module.css';
 
 export const Book = () => {
     const { userId } = useContext(AuthContext);
