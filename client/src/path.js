@@ -2,6 +2,7 @@ const Path ={
     Home: "/",
     About:"/about",
     Add:"/add",
+    Edit:"/catalog/edit/:toyId",
     Catalog:"/catalog",
     ToyDetails:`/catalog/:toyId`,
     Services:"/services",
