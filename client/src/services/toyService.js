@@ -23,7 +23,7 @@ export const edit = async (toyId, data) => {
 }
 
 export const deleteToy = async (toyId) => {
-    const result = await request.delete(`${baseUrl}/${toyId}`);
+    const result = await request.remove(`${baseUrl}/${toyId}`);
     return result;
 }
 
