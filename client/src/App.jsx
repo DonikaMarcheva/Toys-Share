@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthProvider } from "./contexts/authContext.jsx"
+import { DataProvider } from './contexts/dataContext.jsx';
 
 import Footer from "./components/Footer/Footer.jsx"
 import Header from "./components/Header/Header.jsx"
@@ -13,8 +14,8 @@ import Register from './components/Register/Register.jsx';
 import Services from './components/SiteServices/Services.jsx';
 import Path from './path.js';
 import Logout from "./components/Logout/Logout.jsx";
-import { DataProvider } from './contexts/dataContext.jsx';
 import ToyDetails from './components/ToyDetails/toyDetails.jsx';
+import PageNotFound from './components/PageNotFound/PageNotFound.jsx';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path={Path.Login} element={<Login />}></Route>
           <Route path={Path.Register} element={<Register />}></Route>
           <Route path={Path.Logout} element={<Logout />}></Route>
+          <Route path={Path.NotFound} element={<PageNotFound />} />
           
           </Routes>
       {/* </main> */}
