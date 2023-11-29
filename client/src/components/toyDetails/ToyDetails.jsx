@@ -35,7 +35,7 @@ export default function ToyDetails() {
                         </div>
                         {isOwner ? (
                             <div className={styles.buttons}>
-                                <Link to={`/toyDetails/edit/${toy._id}`}>Edit</Link>
+                                <Link to={`/catalog/edit/${toy._id}`}>Edit</Link>
                                 <button className={styles.button}>Delete</button>
                             </div>
                         ) : (
