@@ -76,6 +76,14 @@
         margin-bottom: 0.2em;
     }
 
+    .card-info p {
+        font-size: 18px;
+        text-align: justify;
+    }
+    .card-info span {
+        font-weight: bold;
+    }
+
     /* // Images */
     .card-image {
         height: 200px;
