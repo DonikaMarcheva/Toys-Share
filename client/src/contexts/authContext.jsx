@@ -1,10 +1,3 @@
-// import { createContext } from "react";
-
-// const AuthContext = createContext();
-// AuthContext.displayName ='AuthContext';
-
-// export default AuthContext;
-
 import { createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '../hooks/useLocalStorage.js';
