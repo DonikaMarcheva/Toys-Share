@@ -12,14 +12,12 @@ import Catalog from './components/Catalog/Catalog.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Services from './components/SiteServices/Services.jsx';
-import Path from './path.js';
 import Logout from "./components/Logout/logout.jsx";
 import ToyDetails from './components/ToyDetails/toyDetails.jsx';
 import PageNotFound from './components/PageNotFound/PageNotFound.jsx';
 import ToyEdit from './components/toyEdit/ToyEdit.jsx';
 import AuthGurd from './components/guards/AuthGuard.jsx';
-
-
+import Path from './path.js';
 
 function App() {
 

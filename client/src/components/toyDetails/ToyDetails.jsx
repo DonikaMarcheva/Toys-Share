@@ -6,6 +6,7 @@ import styles from './ToyDetails.module.css'
 import * as toyService from '../../services/toyService.js'
 import { Book } from '../Book/Book.jsx';
 import Path from '../../path.js';
+import { pathToUrl } from '../../utils/pathUtil.js';
 
 export default function ToyDetails() {
     const { email, userId } = useContext(AuthContext);
@@ -45,7 +46,7 @@ export default function ToyDetails() {
                         </div>
                         {isOwner ? (
                             <div className={styles.buttons}>
-                                <Link to={`/catalog/edit/${toy._id}`}>Edit</Link>
+                                <Link to={pathToUrl(Path.Edit, {toyId})}>Edit</Link>
                                 <button className={styles.button} onClick={deleteButtonClickHandler}>Delete</button>
                             </div>
                         ) : (
