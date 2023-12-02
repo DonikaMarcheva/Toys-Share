@@ -27,10 +27,9 @@ export default function Header() {
                     <div className={styles.navigation}>
                         <ul>
                             <li><Link to={Path.About}>About</Link></li>
-                            {/* <li><Link to={Path.Services}>Services</Link></li> */}
                             <li><Link to={Path.Catalog}>Catalog</Link></li>
                             {isAuthenticated &&
-                                <li><Link to="/add">Add Toys</Link></li>}
+                                <li><Link to={Path.Add}>Add Toys</Link></li>}
 
                         </ul>
                     </div>
