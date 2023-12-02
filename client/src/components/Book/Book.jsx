@@ -11,14 +11,21 @@ export const Book = () => {
 
     const [book, setBooks] = useState([]);
     const [isBooked, setIsBooked] = useState(false);
-
+    const [cantBook, setCantBook] = useState(false);
 
     useEffect(() => {
         bookService.getBookedCount(toyId)
             .then((booksResult) => {
                 setBooks(booksResult);
+                if (booksResult.length > 0) {
+                    setIsBooked(true);
+                    if (booksResult.find((x) => x._ownerId !== userId)) {
+                        setCantBook(true);
+                    }
+                }
             });
     }, [toyId]);
+
 
     const onBookClick = () => {
         const currentBook = book.find((x) => x._ownerId === userId);
@@ -32,15 +39,17 @@ export const Book = () => {
             bookService.addBook(toyId, userId)
                 .then((result) => {
                     setBooks((state) => [...state, result]);
-                    setIsBooked(true);
                 });
+            setIsBooked(true);
         };
     };
 
     return (
         <div className={styles.buttons}>
-            {isBooked && <button onClick={onBookClick}>Booked</button>}
+            {cantBook && <button disabled>Booked</button>}
+            {!cantBook && isBooked && <button onClick={onBookClick}>Booked</button>}
             {!isBooked &&
-            <button  onClick={onBookClick}>Book</button>}
+                <button onClick={onBookClick}>Book</button>}
         </div>
-);};
+    );
+};
