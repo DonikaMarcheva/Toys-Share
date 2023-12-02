@@ -55,7 +55,7 @@ export default function ToyEdit() {
         <div className={styles.add}>
             <div className={styles.container}>
                 <div className={styles["add-form"]}>
-                    <h2 className={styles.active}> add toy </h2>
+                    <h2 className={styles.active}> edit toy </h2>
                     <form onSubmit={editToySubmitHandler}>
                         <input type="text"
                             className={styles.text}
@@ -101,7 +101,7 @@ export default function ToyEdit() {
                         />
                         <span>add description</span>
 
-                        <button className={styles["add-toy"]}>Add</button>
+                        <button className={styles["add-toy"]}>Edit</button>
 
                     </form>
                 </div>
