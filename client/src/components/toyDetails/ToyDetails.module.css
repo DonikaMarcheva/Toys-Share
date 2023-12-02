@@ -120,3 +120,7 @@
   .buttons a:focus {
     outline: none;
   }
+
+button:disabled {
+    background-color: grey;
+}
