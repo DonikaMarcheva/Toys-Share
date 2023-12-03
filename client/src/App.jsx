@@ -18,6 +18,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound.jsx';
 import ToyEdit from './components/toyEdit/ToyEdit.jsx';
 import AuthGurd from './components/guards/AuthGuard.jsx';
 import Path from './path.js';
+import MapContainer from './components/Map/MapContainer.jsx';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
             <Route path={Path.Services} element={<Services />}></Route>
             <Route path={Path.Catalog} element={<Catalog />}></Route>
             <Route path={Path.ToyDetails} element={<ToyDetails />}></Route>
+            <Route path={Path.Map} element={<MapContainer />} ></Route>
             <Route path={Path.Login} element={<Login />}></Route>
             <Route path={Path.Register} element={<Register />}></Route>
             <Route path={Path.NotFound} element={<PageNotFound />} />
