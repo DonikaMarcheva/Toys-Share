@@ -16,6 +16,7 @@ export default function ToyDetails() {
     const { toyId } = useParams();
     const navigate = useNavigate();
     const isOwner = toy._ownerId === userId;
+    const toyAddress= `${toy.town}, ${toy.address}`
 
     useEffect(() => {
         toyService.getOne(toyId)
@@ -45,7 +46,7 @@ export default function ToyDetails() {
                             <p className={styles["card-intro"]}><span>Category: </span>{toy.category}</p>
                             <p className={styles["card-intro"]} >
                                 <span>Detailed Address: </span>
-                                <Link to={`${toy.address}`}><FontAwesomeIcon icon={faLocationDot}
+                                <Link to={`${toyAddress}`}><FontAwesomeIcon icon={faLocationDot}
                                     style={{ color: "#cc804d", padding: '0.2em 0.5em', marginRight: '0.5em' }} />
                                     {toy.town}, {toy.address}
                                 </Link></p>
