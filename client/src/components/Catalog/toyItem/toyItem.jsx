@@ -8,7 +8,8 @@ export default function ToyItem({
     _id,
     toy,
     imageUrl,
-    category
+    category,
+    town,
 }) {
 
     const {
@@ -24,6 +25,7 @@ export default function ToyItem({
                 <div className={styles["card-info"]}>
                     <h2 className={styles["card-title"]}>{toy}</h2>
                     <p className={styles["card-intro"]}><span>Category:</span> {category}</p>
+                    <p className={styles["card-intro"]}><span>Address:</span> {town}</p>
                 </div>
                 {isAuthenticated && (
                     <div className={styles.buttons}>
