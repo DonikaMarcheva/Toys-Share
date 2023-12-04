@@ -1344,7 +1344,8 @@
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 toy: "A doll",
                 category: "Girl's toys",
-                address: "Varna, 18 Evlogi Georgiev Str, ap.13",
+                town: "Varna",
+                address: "18 Evlogi Georgiev Str, ap.13",
                 imageUrl: "https://images.unsplash.com/photo-1572412227055-156215a50f73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxkb2xsfGVufDB8fDB8fHww",
                 description: "This doll is so pretty and in a very good condition. The outfit is adorable but the elastic is gone in her knickers.",
                 _id: "3564027f-adcd-4425-b2c0-1253d2386c0c"
@@ -1353,7 +1354,8 @@
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 toy: "Ambulance truck",
                 category:"Boy's toys",
-                address: "Sofia, 10 Oborishte Str., ap.5",
+                town: "Sofia",
+                address: "10 Oborishte Str., ap.5",
                 imageUrl: "https://images.unsplash.com/photo-1502740479091-635887520276?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 description: "The truck is in a very good condition. It has lights and an ambulan's siren.",
                 _id: "c64db398-91cd-487c-b900-86058c0422f8"
@@ -1362,7 +1364,8 @@
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 toy: "A robot",
                 category:"Boy's toys",
-                address: "Troyan, 1 Vazrozdentsi Str",
+                town: "Troyan",
+                address: "1 Vazrozdentsi Str",
                 imageUrl: "https://images.unsplash.com/photo-1563396983906-b3795482a59a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHJvYm90fGVufDB8fDB8fHww",
                 description: "The roobot is a perfect toy for the little boys who have big imagination. This was my son's favorite toy but now is your kid's turn to play with it. Only personal delivery.",
                 _id: "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
@@ -1371,7 +1374,8 @@
                 _ownerId:"60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 toy: "A collection of five fairy tails books",
                 category:"Books",
-                address: "Plovdiv, 2 Alen mak Str. ap.98",
+                town: "Plovdiv",
+                address: "2 Alen mak Str. ap.98",
                 imageUrl: "https://images.unsplash.com/photo-1533561304446-88a43deb6229?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW4lMjBib29rc3xlbnwwfHwwfHx8MA%3D%3D",
                 description: "If your child loves to read do not hesitate to book this collection.",
                 _id: "18bfdb21-333b-42bd-a32c-c114263f2569"
