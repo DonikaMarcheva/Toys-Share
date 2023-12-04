@@ -1,11 +1,24 @@
 import { useEffect, useState } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 import * as toyService from '../../services/toyService.js';
+
 import ToyItem from './toyItem/toyItem.jsx';
 import styles from './Catalog.module.css'
 
 export default function Catalog() {
     const [toys, setToys] = useState([]);
+    const [filterClicked, setFilterClick] =useState(false);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const category = searchParams.get('category') || '';
+    const town = searchParams.get('town') || '';
+
+    const updateSearchParams = (newCategory, newTown) => {
+        setSearchParams({
+            category: newCategory,
+            town: newTown,
+        });
+    };
+
 
     useEffect(() => {
         toyService.getAll()
@@ -15,131 +28,60 @@ export default function Catalog() {
     return (
         <div className={styles.catalog}>
             <div className={styles.container}>
-                
-            {toys.map(toy => (
-                <ToyItem key={toy._id} {...toy} />
-            ))}
+                <div className={styles["toys-filter"]}>
+                    <h2>Filter Toys:</h2>
 
-            {toys.length === 0 && (
-                <h3 className="no-articles">No articles yet</h3>
-            )}
+                    <label>
+                        Category:
+                        <select
+                            value={category}
+                            onChange={(e) => updateSearchParams(e.target.value, town)}>
+                            <option value=""></option>
+                                <option value="Boy's toys">Boy's toys</option>
+                                <option value="Girl's toys">Girls's toys</option>
+                                <option value="Books">Books</option>
+                                </select>
+                    </label>
+
+                    <label>
+                        Town:
+                        <input
+                            type="text"
+                            value={town}
+                            onChange={(e) => updateSearchParams(category, e.target.value)}
+                        />
+                    </label>
+
+                    <button onClick={()=>{setFilterClick(true)}}>Filter</button>
+                </div>
+
+                <div className={styles["card-wrapper"]}>
+
+                    {!filterClicked && 
+
+                (toys.map(toy => (
+                    <ToyItem key={toy._id} {...toy} />
+                )))}
+
+                {filterClicked &&
+                toys.filter((item) => {
+                    const matchesCategory = category ? item.category === category : true;
+                    const matchesTown = town ? item.town === town : true;
+                    return matchesCategory && matchesTown;
+                  }).map(toy => (
+                    <ToyItem key={toy._id} {...toy} />
+                ))
+                }
+
+                </div>
+                {toys.length === 0 && (
+                    <h3 className="no-articles">No articles yet</h3>
+                )}
+            </div>
         </div>
-        </div>
-        
+
     );
 }
 
 
 
-// import { useContext } from 'react';
-// import styles from './Catalog.module.css'
-// import {Link} from 'react-router-dom'
-// import AuthContext from '../../contexts/authContext.js';
-
-// export default function Catalog() {
-//     const {
-//         isAuthenticated,
-//     } = useContext(AuthContext);
-
-//     return (
-//         <div className={styles.catalog}>
-//             <div className={styles.container}>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                             <img src="../../../public/images/login-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className={styles["card-title"]}>Exploring around</h2>
-//                             <p className={styles["card-intro"]}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         {isAuthenticated && (
-//                             <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <Link to="/details">Details</Link>
-//                         </div>
-//                         )}
-                        
-//                     </div>
-//                 </div>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                         <img src="../../../public/images/register-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className="card-title">A new trail you can't miss</h2>
-//                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         {isAuthenticated && (
-//                             <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <Link to="/details">Details</Link>
-//                         </div>
-//                         )}
-//                     </div>
-//                 </div>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                         <img src="../../../public/images/login-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className="card-title">Inside the Outdoors</h2>
-//                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <a href="#">Details</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                         <img src="../../../public/images/register-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className="card-title">Essential hiking hacks</h2>
-//                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <a href="#">Details</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                         <img src="../../../public/images/login-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className="card-title">Discovering this hidden gem</h2>
-//                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <a href="#">Details</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className={styles.cards}>
-//                     <div className={styles["card-item"]}>
-//                         <div className={styles["card-image"]}>
-//                         <img src="../../../public/images/register-bear.jpg" alt="" />
-//                         </div>
-//                         <div className={styles["card-info"]}>
-//                             <h2 className="card-title">1 Day routes for this weekend</h2>
-//                             <p className="card-intro">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-//                         </div>
-//                         <div className={styles.buttons}>
-//                             <a href="#">Book</a>
-//                             <a href="#">Details</a>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
