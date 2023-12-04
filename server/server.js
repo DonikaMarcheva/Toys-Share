@@ -1,10 +1,11 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('http'), require('fs'), require('crypto')) :
-    typeof define === 'function' && define.amd ? define(['http', 'fs', 'crypto'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Server = factory(global.http, global.fs, global.crypto));
-}(this, (function (http, fs, crypto) { 'use strict';
+        typeof define === 'function' && define.amd ? define(['http', 'fs', 'crypto'], factory) :
+            (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Server = factory(global.http, global.fs, global.crypto));
+}(this, (function (http, fs, crypto) {
+    'use strict';
 
-    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+    function _interopDefaultLegacy(e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
     var http__default = /*#__PURE__*/_interopDefaultLegacy(http);
     var fs__default = /*#__PURE__*/_interopDefaultLegacy(fs);
@@ -13,14 +14,14 @@
     class ServiceError extends Error {
         constructor(message = 'Service Error') {
             super(message);
-            this.name = 'ServiceError'; 
+            this.name = 'ServiceError';
         }
     }
 
     class NotFoundError extends ServiceError {
         constructor(message = 'Resource not found') {
             super(message);
-            this.name = 'NotFoundError'; 
+            this.name = 'NotFoundError';
             this.status = 404;
         }
     }
@@ -28,7 +29,7 @@
     class RequestError extends ServiceError {
         constructor(message = 'Request error') {
             super(message);
-            this.name = 'RequestError'; 
+            this.name = 'RequestError';
             this.status = 400;
         }
     }
@@ -36,7 +37,7 @@
     class ConflictError extends ServiceError {
         constructor(message = 'Resource conflict') {
             super(message);
-            this.name = 'ConflictError'; 
+            this.name = 'ConflictError';
             this.status = 409;
         }
     }
@@ -44,7 +45,7 @@
     class AuthorizationError extends ServiceError {
         constructor(message = 'Unauthorized') {
             super(message);
-            this.name = 'AuthorizationError'; 
+            this.name = 'AuthorizationError';
             this.status = 401;
         }
     }
@@ -52,7 +53,7 @@
     class CredentialError extends ServiceError {
         constructor(message = 'Forbidden') {
             super(message);
-            this.name = 'CredentialError'; 
+            this.name = 'CredentialError';
             this.status = 403;
         }
     }
@@ -556,8 +557,8 @@
             if (query.pageSize) {
                 responseData = responseData.slice(0, pageSize);
             }
-    		
-    		if (query.distinct) {
+
+            if (query.distinct) {
                 const props = query.distinct.split(',').filter(p => p != '');
                 responseData = Object.values(responseData.reduce((distinct, c) => {
                     const key = props.map(p => c[p]).join('::');
@@ -793,7 +794,7 @@
     }
 
     function onRequest(context, tokens, query, body) {
-        Object.entries(body).forEach(([k,v]) => {
+        Object.entries(body).forEach(([k, v]) => {
             console.log(`${k} ${v ? 'enabled' : 'disabled'}`);
             context.util[k] = v;
         });
@@ -931,7 +932,7 @@
          * @param {Object} data Value to store. Shallow merge will be performed!
          * @return {Object} Updated entry.
          */
-         function merge(collection, id, data) {
+        function merge(collection, id, data) {
             if (!collections.has(collection)) {
                 throw new ReferenceError('Collection does not exist: ' + collection);
             }
@@ -1318,25 +1319,25 @@
 
     var identity = "email";
     var protectedData = {
-    	users: {
-    		"35c62d76-8152-4626-8712-eeb96381bea8": {
-    			email: "peter@abv.bg",
-    			username: "Peter",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-    		},
-    		"847ec027-f659-4086-8032-5173e2f9c93a": {
-    			email: "george@abv.bg",
-    			username: "George",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
-    		},
-    		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
-    			email: "admin@abv.bg",
-    			username: "Admin",
-    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
-    		}
-    	},
-    	sessions: {
-    	}
+        users: {
+            "35c62d76-8152-4626-8712-eeb96381bea8": {
+                email: "peter@abv.bg",
+                username: "Peter",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "847ec027-f659-4086-8032-5173e2f9c93a": {
+                email: "george@abv.bg",
+                username: "George",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+            },
+            "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
+                email: "admin@abv.bg",
+                username: "Admin",
+                hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
+            }
+        },
+        sessions: {
+        }
     };
     var seedData = {
         toys: {
@@ -1353,7 +1354,7 @@
             "c64db398-91cd-487c-b900-86058c0422f8": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 toy: "Ambulance truck",
-                category:"Boy's toys",
+                category: "Boy's toys",
                 town: "Sofia",
                 address: "10 Oborishte Str., ap.5",
                 imageUrl: "https://images.unsplash.com/photo-1502740479091-635887520276?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1363,63 +1364,63 @@
             "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 toy: "A robot",
-                category:"Boy's toys",
+                category: "Boy's toys",
                 town: "Troyan",
-                address: "1 Vazrozdentsi Str",
+                address: "55 G.S.Rakovski Str",
                 imageUrl: "https://images.unsplash.com/photo-1563396983906-b3795482a59a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHJvYm90fGVufDB8fDB8fHww",
                 description: "The roobot is a perfect toy for the little boys who have big imagination. This was my son's favorite toy but now is your kid's turn to play with it. Only personal delivery.",
                 _id: "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
             },
             "18bfdb21-333b-42bd-a32c-c114263f2569": {
-                _ownerId:"60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 toy: "A collection of five fairy tails books",
-                category:"Books",
+                category: "Books",
                 town: "Plovdiv",
-                address: "2 Alen mak Str. ap.98",
+                address: "15A, Vassil Aprilov Blvd.",
                 imageUrl: "https://images.unsplash.com/photo-1533561304446-88a43deb6229?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpbGRyZW4lMjBib29rc3xlbnwwfHwwfHx8MA%3D%3D",
                 description: "If your child loves to read do not hesitate to book this collection.",
                 _id: "18bfdb21-333b-42bd-a32c-c114263f2569"
             }
         },
-    	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
-    	booked: {
-    	},
+        comments: {
+            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                content: "Great recipe!",
+                recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
+                _createdOn: 1614260681375,
+                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
+            }
+        },
+        booked: {
+        },
     };
     var rules$1 = {
-    	users: {
-    		".create": false,
-    		".read": [
-    			"Owner"
-    		],
-    		".update": false,
-    		".delete": false
-    	},
-    	members: {
-    		".update": "isOwner(user, get('teams', data.teamId))",
-    		".delete": "isOwner(user, get('teams', data.teamId)) || isOwner(user, data)",
-    		"*": {
-    			teamId: {
-    				".update": "newData.teamId = data.teamId"
-    			},
-    			status: {
-    				".create": "newData.status = 'pending'"
-    			}
-    		}
-    	}
+        users: {
+            ".create": false,
+            ".read": [
+                "Owner"
+            ],
+            ".update": false,
+            ".delete": false
+        },
+        members: {
+            ".update": "isOwner(user, get('teams', data.teamId))",
+            ".delete": "isOwner(user, get('teams', data.teamId)) || isOwner(user, data)",
+            "*": {
+                teamId: {
+                    ".update": "newData.teamId = data.teamId"
+                },
+                status: {
+                    ".create": "newData.status = 'pending'"
+                }
+            }
+        }
     };
     var settings = {
-    	identity: identity,
-    	protectedData: protectedData,
-    	seedData: seedData,
-    	rules: rules$1
+        identity: identity,
+        protectedData: protectedData,
+        seedData: seedData,
+        rules: rules$1
     };
 
     const plugins = [
