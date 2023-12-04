@@ -11,6 +11,7 @@ Toys Share is a Singe Page Application aimed at facilitating the sharing of unus
 
 - **Toys Catalog:**
   - Browse: Users, whether logged in or not, can explore the catalog of available toys.
+  - Users can search toys with two criteria- category and/or location.
   - Toy Details: Only logged-in users can view detailed information about a toy, including its map location.
 
 - **Booking System:**
