@@ -8,6 +8,7 @@ const addFormKeys = {
     Toy: 'toy',
     Category: 'category',
     Image: 'imageUrl',
+    Town: 'town',
     Address: 'address',
     Description: 'description'
 }
@@ -20,6 +21,7 @@ export default function Add() {
         [addFormKeys.Toy]: '',
         [addFormKeys.Category]: '',
         [addFormKeys.Image]: '',
+        [addFormKeys.Town]:'',
         [addFormKeys.Address]: '',
         [addFormKeys.Description]: '',
     });
@@ -58,6 +60,14 @@ export default function Add() {
                             value={values[addFormKeys.Image]}
                         />
                         <span>image</span>
+
+                        <input type="text"
+                            className={styles.text}
+                            name={addFormKeys.Town}
+                            onChange={onChange}
+                            value={values[addFormKeys.Town]}
+                        />
+                        <span>town</span>
 
                         <input type="text"
                             className={styles.text}
