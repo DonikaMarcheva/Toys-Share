@@ -19,7 +19,7 @@ export default function Header() {
                 <div className={styles.container}>
 
                     <div className={styles["logo-container"]}>
-                        <Link className={styles.logo} to="/" >
+                        <Link to={Path.Home} className={styles.logo}  >
                             <img src={logo} alt="logo" />
                         </Link>
                     </div>
@@ -27,7 +27,7 @@ export default function Header() {
                     <div className={styles.navigation}>
                         <ul>
                             <li><Link to={Path.About}>About</Link></li>
-                            <li><Link to={Path.Catalog}>Catalog</Link></li>
+                            <li><Link to={Path.Catalog}>Toys</Link></li>
                             {isAuthenticated &&
                                 <li><Link to={Path.Add}>Add Toys</Link></li>}
 
