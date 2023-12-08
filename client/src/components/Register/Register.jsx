@@ -27,7 +27,6 @@ export default function Register() {
         if(a.length===0){
             isValid=true;
         }
-        console.log(isValid);
 
     return (
         <div className={styles.register}>
