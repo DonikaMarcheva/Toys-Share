@@ -8,15 +8,6 @@ const buildOptions = (data) => {
         };
     }
 
-    // const token = localStorage.getItem('accessToken');
-
-    // if (token) {
-    //     options.headers = {
-    //         ...options.headers,
-    //         'X-Authorization': token
-    //     };
-    // }
-
     const serializedAuth = localStorage.getItem('auth');
     if (serializedAuth) {
         const auth = JSON.parse(serializedAuth);
@@ -41,7 +32,6 @@ const request = async (method, url, data) => {
 
         if (response.ok != true) {
             if (response.status == 403) {
-                // localStorage.removeItem('accessToken')
                 localStorage.removeItem('auth');
             }
             const error = await response.json();
