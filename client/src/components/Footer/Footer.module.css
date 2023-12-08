@@ -1,11 +1,29 @@
 .site-footer {
     background-color: rgb(232, 222, 222);
+    display: inline-block;
 }
 
-.site-footer p {
-    font-size: 1.2em;
-    padding: 1em 2em;
+.copyrights-wrapper {
+    padding-right: 4em;
+    border-top: 1px solid #BC7849;
+}
+
+.footer-content {
+    padding: 0.5em 4em;
+    display: flex;
+    justify-content: space-between;
+    color: #BC7849;
+}
+
+.copyrights {
+    font-size: 1.1em;
     text-align: center;
     font-style: italic;
     font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+.site-footer a{
+    text-decoration: none;
+    color: #BC7849;
 }
