@@ -29,7 +29,6 @@ export default function ToyItem({
                 </div>
                 {isAuthenticated && (
                     <div className={styles.buttons}>
-                        {/* <a href="#">Book</a> */}
                         <Link to={`/catalog/${_id}`}>Details</Link>
                     </div>
                 )}
