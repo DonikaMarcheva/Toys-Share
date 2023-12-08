@@ -16,12 +16,18 @@ const registerFormKeys = {
 export default function Register() {
 
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    const { values, errors, onChange, onSubmit } = useForm(registerSubmitHandler, {
         [registerFormKeys.Email]: '',
         [registerFormKeys.Username]: '',
         [registerFormKeys.Password]: '',
         [registerFormKeys.RepeatPassword]: ''
     })
+    let isValid= false;
+    const a=Object.values(errors).filter(x=>x!=='ok')
+        if(a.length===0){
+            isValid=true;
+        }
+        console.log(isValid);
 
     return (
         <div className={styles.register}>
@@ -29,39 +35,54 @@ export default function Register() {
                 <div className={styles["login-form"]}>
                     <h2 className={styles.active}> register </h2>
                     <form onSubmit={onSubmit}>
+
                         <input type="text"
                             className={styles.text}
                             name={registerFormKeys.Email}
                             onChange={onChange}
+                            onBlur={onChange}
                             value={values[registerFormKeys.Email]}
                         />
-                        <span>email</span><br /><br />
+                        <span className={styles.label}>email</span>
+                        {errors[registerFormKeys.Email]!=='ok' && 
+                        <span className={styles.errors}>{errors[registerFormKeys.Email]}</span>}
 
                         <input type="text"
                             className={styles.text}
                             name={registerFormKeys.Username}
                             onChange={onChange}
+                            onBlur={onChange}
                             value={values[registerFormKeys.Username]}
                         />
-                        <span>username</span><br /><br />
+                        <span className={styles.label}>username</span>
+                        {errors[registerFormKeys.Username]!=='ok' && 
+                        <span className={styles.errors}>{errors[registerFormKeys.Username]}</span>}
 
                         <input type="password"
                             className={styles.text}
                             name={registerFormKeys.Password}
                             onChange={onChange}
+                            onBlur={onChange}
                             value={values[registerFormKeys.Password]}
                         />
-                        <span>password</span><br />
+                        <span className={styles.label}>password</span>
+                        {errors[registerFormKeys.Password]!=='ok' && 
+                        <span className={styles.errors}>{errors[registerFormKeys.Password]}</span>}
 
                         <input type="password"
                             className={styles.text}
                             name={registerFormKeys.RepeatPassword}
                             onChange={onChange}
+                            onBlur={onChange}
                             value={values[registerFormKeys.RepeatPassword]}
                         />
-                        <span>repeat password</span><br />
-
-                        <button className={styles.signin}>Register</button>
+                        <span className={styles.label}>repeat password</span>
+                        {errors[registerFormKeys.RepeatPassword]!=='ok' && 
+                        <span className={styles.errors}>{errors[registerFormKeys.RepeatPassword]}</span>}
+                        
+                        {isValid? <button className={styles.signin}>Register</button>:
+                        <button className={styles.signin} disabled={true}>Register</button>}
+                        
                         <Link to={Path.Login}>You already have an account?</Link>
                     </form>
                 </div>
