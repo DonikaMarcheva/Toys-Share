@@ -19,6 +19,7 @@
 }
 
 .catalog .toys-filter {
+    max-width: 90vw;
     padding: 1em 0;
     display: flex;
     flex-wrap: wrap;
