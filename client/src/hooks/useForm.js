@@ -4,7 +4,6 @@ export default function useForm(submitHandler, initialValues) {
 
     const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState(initialValues);
-    const [isValid, setIsValid]=useState(false);
 
     const onChange = (e) => {
         
@@ -38,10 +37,6 @@ export default function useForm(submitHandler, initialValues) {
                     }))
                 }
             }
-        }
-        const a=Object.values(errors).filter(x=>x!=='ok')
-        if(a.length===0){
-            setIsValid(true);
         }
     }
 
