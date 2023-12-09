@@ -23,8 +23,8 @@ export default function Register() {
         [registerFormKeys.RepeatPassword]: ''
     })
     let isValid= false;
-    const a=Object.values(errors).filter(x=>x!=='ok')
-        if(a.length===0){
+    const errorSearcher=Object.values(errors).filter(x=>x!=='ok')
+        if(errorSearcher.length===0){
             isValid=true;
         }
 

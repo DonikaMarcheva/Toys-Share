@@ -98,7 +98,7 @@ export default function ToyEdit() {
                             onChange={onChange}
                             value={toy.address}
                         />
-                        <span>owner address</span>
+                        <span>street</span>
 
                         <textarea type="text"
                             className={styles.description}

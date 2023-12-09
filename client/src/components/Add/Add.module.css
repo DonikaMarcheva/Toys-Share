@@ -52,6 +52,16 @@
     top: -60px;
     transition: all 0.5s ease-in-out;
 }
+.add-form .label {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 25%;
+    opacity: 0.8;
+    display: inline-block;
+    position: relative;
+    top: -65px;
+    transition: all 0.5s ease-in-out;
+}
 
 .add .text {
     border: none;
@@ -139,3 +149,17 @@ margin-bottom: 15px;
 .add a {
     color: #010844;
 }
+
+.errors {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 53%;
+    opacity: 0.8;
+    display: inline-block;
+    position: relative;
+    top: -65px;
+    transition: all 0.5s ease-in-out;
+    color: red;
+    text-align:end;
+    padding-left: 2em;
+  }
