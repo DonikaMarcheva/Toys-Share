@@ -8,7 +8,7 @@ export default function useForm(submitHandler, initialValues) {
     const onChange = (e) => {
         
         setValues(state => ({
-            ...state, [e.target.name]: e.target.value
+            ...state, [e.target.name]: e.target.value.trim()
         }))
 
         for (const key in values) {

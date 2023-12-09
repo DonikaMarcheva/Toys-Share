@@ -37,10 +37,7 @@ export default function ToyEdit() {
     const editToySubmitHandler = async (e) => {
         e.preventDefault();
 
-        const values = Object.fromEntries(new FormData(e.currentTarget));
-
-
-        await toyService.edit(toyId, values);
+        await toyService.edit(toyId, toy);
 
         navigate(Path.Catalog);
 
