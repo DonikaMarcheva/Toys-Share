@@ -29,7 +29,6 @@ function App() {
 
           <Header />
 
-          {/* <main> */}
           <Routes>
             <Route path={Path.Home} element={<Home />}></Route>
             <Route path={Path.About} element={<About />}></Route>
@@ -47,7 +46,7 @@ function App() {
               <Route path={Path.Logout} element={<Logout />}></Route>
             </Route>
           </Routes>
-          {/* </main> */}
+          
           <Footer />
 
         </div>

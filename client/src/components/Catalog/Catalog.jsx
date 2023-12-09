@@ -38,7 +38,7 @@ export default function Catalog() {
                             onChange={(e) => updateSearchParams(e.target.value, town)}>
                             <option value=""></option>
                                 <option value="Boy's toys">Boy's toys</option>
-                                <option value="Girl's toys">Girls's toys</option>
+                                <option value="Girl's toys">Girl's toys</option>
                                 <option value="Books">Books</option>
                                 </select>
                     </label>

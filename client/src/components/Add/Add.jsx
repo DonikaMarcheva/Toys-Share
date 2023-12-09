@@ -48,7 +48,7 @@ export default function Add() {
                             value={values[addFormKeys.Category]}>
                                 <option value=""></option>
                                 <option value="Boy's toys">Boy's toys</option>
-                                <option value="Girls's toys">Girls's toys</option>
+                                <option value="Girl's toys">Girl's toys</option>
                                 <option value="Books">Books</option>
                         </select>
                         <span>category</span>
