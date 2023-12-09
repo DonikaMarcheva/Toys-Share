@@ -12,21 +12,21 @@ export default function useForm(submitHandler, initialValues) {
         }))
 
         for (const key in values) {
-            if (values[key].length === 0) {
+            if (values[key].trim().length === 0) {
                 setErrors(state => ({
                     ...state, [key]: `${key} required`
                 }))
             } else {
-                if (key === 'email' && !/[A-Za-z1-9._]+@[a-z]+\.[a-z]+/.test(values[key])) {
+                if (key === 'email' && !/[A-Za-z1-9._]+@[a-z]+\.[a-z]+/.test(values[key].trim())) {
                     setErrors(state => ({
                         ...state, [key]: `${key} must be valid`
                     }))
                 }
-                else if (key === 'password' && values[key].length < 6) {
+                else if (key === 'password' && values[key].trim().length < 6) {
                     setErrors(state => ({
                         ...state, [key]: `${key} must be min 6 characters`
                     }))
-                } else if (key === 'repeat-password' && values[key] !== values['password']) {
+                } else if (key === 'repeat-password' && values[key].trim() !== values['password'].trim()) {
                     setErrors(state => ({
                         ...state, [key]: `Passwords don\'t match`
                     }))
