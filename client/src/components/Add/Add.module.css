@@ -56,13 +56,13 @@
 .add .text {
     border: none;
     width: 89%;
-    padding: 10px 20px;
+    padding: 0 20px;
     display: block;
-    height: 10px;
+    height: 30px;
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.171);
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 10px;
     outline: 0;
     background: rgba(0, 0, 0, 0);
     font-weight: bolder;
