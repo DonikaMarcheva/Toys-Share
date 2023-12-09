@@ -23,14 +23,14 @@ export const DataProvider = ({ children }) => {
         navigate(Path.Catalog);
     };
 
-    const photoEditHandler = async (values) => {
+    const editToyHandler = async (values) => {
         const result = await toyService.edit(values._id, values);
         setToys(state => state.map(x => x._id === values._id ? result : x));
         navigate(`/catalog/${values._id}`);
     };
 
     const deleteToy = (toyId) => {
-        setToys(state => state.filter(toy => toy._id !== photoId));
+        setToys(state => state.filter(toy => toy._id !== toyId));
     };
 
     const getToy = (toyId) => {
@@ -44,7 +44,7 @@ export const DataProvider = ({ children }) => {
     const contextValues = {
         toys,
         uploadToyHandler,
-        photoEditHandler,
+        editToyHandler,
         deleteToy,
         getToy,
         getOwnerToys

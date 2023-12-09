@@ -10,6 +10,7 @@ const editFormKeys = {
     Toy: 'toy',
     Category: 'category',
     Image: 'imageUrl',
+    Town: 'town',
     Address: 'address',
     Description: 'description'
 }
@@ -21,6 +22,7 @@ export default function ToyEdit() {
         [editFormKeys.Toy]: '',
         [editFormKeys.Category]: '',
         [editFormKeys.Image]: '',
+        [editFormKeys.Town]:'',
         [editFormKeys.Address]: '',
         [editFormKeys.Description]: '',
     });
@@ -84,6 +86,14 @@ export default function ToyEdit() {
                             value={toy.imageUrl}
                         />
                         <span>image</span>
+
+                        <input type="text"
+                            className={styles.text}
+                            name={editFormKeys.Town}
+                            onChange={onChange}
+                            value={toy.town}
+                        />
+                        <span>town</span>
 
                         <input type="text"
                             className={styles.text}
